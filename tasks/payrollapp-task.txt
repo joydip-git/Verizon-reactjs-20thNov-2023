@@ -1,0 +1,12 @@
+payroll app:
+
+create some objects with following properties, representing any employee, store those objects in an array.
+afterwards, iterate through that array, pick up every employee type object and then calculate their salary and print the salary of every employee
+
+value properties:
+name, id, basic, da, hra, totalSalary
+
+functional property:
+calculateSalary: calculates total salary based on basic, da and hra and saves the total salary in totalSalary property
+	arguments: None
+	return: none
