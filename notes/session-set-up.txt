@@ -1,0 +1,14 @@
+github repository link:
+https://github.com/joydip-git/Verizon-reactjs-20thNov-2023
+
+S/W required:
+Node JS
+Visual Studio Code (editor)
+
+Roadmap to React JS:
+JavaScript 
+TypeScript
+HTML and CSS
+Node JS
+React JS
+

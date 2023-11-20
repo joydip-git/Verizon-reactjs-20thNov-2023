@@ -1,0 +1,60 @@
+web applications
+	HTML and CSS
+	JavaScript
+	TypeScript
+
+
+web servers:
+IIS, Tomcat....
+
+application web server (app server)
+host web app in the development machine using some port number and those web apps can be requested only from the dev machine
+
+
+event-driven programming model
+
+X => onx
+click => onclick
+mouseover => onmouseover
+
+
+browsers:
+	chrome: V8 (C++) => open source
+	safari: JSCore
+	firefox: spidermonkey
+	........
+
+2009
+Ryan Dahl => Node JS (runtime environment for JS) - V8 engine (JS engine)
+tools, chatbot, web api, ......
+server side framework
+
+two environments:
+- browser (React JS)
+- node
+
+
+
+JavaScript:
+a. data types: string, boolean, number, object
+					**: undefined, function
+
+Value related keywords:
+					***: NaN, Infinity, NULL
+
+declare a variable: var keyword
+note: 
+	there is no strict-typing in JS, hence JS is a loosely-typed language
+	there is no static compile time type checking for JS
+	JS is not an OOP language, it is object-based programming language
+
+Object:
+	collection of some properties (keys) and their values (literal values and functions)
+
+
+
+
+
+
+
+	
