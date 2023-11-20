@@ -10,3 +10,22 @@ functional property:
 calculateSalary: calculates total salary based on basic, da and hra and saves the total salary in totalSalary property
 	arguments: None
 	return: none
+
+create two more classes inheriting from base type employee
+hr: 
+value properties:
+name, id, basic, da, hra, gratuity, totalSalary
+
+functional property:
+calculateSalary: calculates total salary based on basic, da and hra and saves the total salary in totalSalary property
+	arguments: None
+	return: none
+
+developer: 
+value properties:
+name, id, basic, da, hra, incentive, totalSalary
+
+functional property:
+calculateSalary: calculates total salary based on basic, da and hra and saves the total salary in totalSalary property
+	arguments: None
+	return: none
