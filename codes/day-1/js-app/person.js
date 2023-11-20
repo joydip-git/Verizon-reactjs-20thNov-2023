@@ -60,8 +60,38 @@ class Trainer extends Person {
 
 const joyPerson = new Trainer('joydip', 1, 1000, 'React JS')
 joyPerson.subject = 'JavaScript'
-console.log(joyPerson.show())
-
 
 const anilPerson = new Trainer('anil', 2, 2000, 'Angular')
-console.log(anilPerson.show())
+
+const value = 100
+//value = 200
+const people = [joyPerson, anilPerson]
+//const people = new Array(joyPerson, anilPerson)
+//people = []
+people.push(
+    new Trainer('sunil', 3, 3000, 'Node JS'),
+    new Trainer('mahesh', 4, 4000, 'HTML')
+)
+//people.splice(1, 1, new Trainer())
+
+//console.log(people)
+
+for (let index = 0; index < people.length; index++) {
+    const p = people[index];
+    console.log(p.show())
+}
+
+for (const p of people) {
+    console.log(p.show())
+}
+
+for (const index in people) {
+    const p = people[index]
+    console.log(p.show())
+}
+
+const copy = people.slice(0, 3)
+console.log(copy)
+
+
+

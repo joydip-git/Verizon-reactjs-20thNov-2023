@@ -82,8 +82,11 @@ ES11 - 2020
 ES12 - 2021
 ES13 - 2022
 in 2015, version 6 was released (ES6) and lots of new features were introduced
-a. let keyword
+a. let and const keyword
 b. class, constructor, extends, super etc.
+c. spread operator, rest operator
+d. object destructuring
+e. ES6 module format: import and export keywords
 
 
 
