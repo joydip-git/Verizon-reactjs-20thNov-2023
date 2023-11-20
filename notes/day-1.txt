@@ -51,6 +51,29 @@ note:
 Object:
 	collection of some properties (keys) and their values (literal values and functions)
 
+every JS file has one hidden function: global function (like main function in any other programming language)
+
+compilation and execution of JS:
+1. preparation stage:
+	all local variable and inner function 'DECLARATIONS' inside a function are (taken care of) registered in an object for that function (variable object - a property in the FEC which refers to that object) - hoisting
+
+2. execution stage:
+	actual execution takes place, i.e., all the assignments and function calls etc. are done
+
+whenever you invoke any function in JS, a function execution context (FEC) object is created and stored in FECS (FEC stack)
+every JS file do have a global (like invisible main) method. that's the method which gets automatically invoked first and GFEC is created. any other function called after this, a FEC will be created for the same and will be placed at the top of the GFEC.
+
+Function Execution Context Object:
+	a. variabale_object:
+	b. this:
+	c. scope:
+
+
+ECMA:
+ECMAScript=> guideline
+in 2015, version 6 was released (ES6) and lots of new features were introduced
+a. let keyword
+
 
 
 

@@ -37,6 +37,7 @@ ref = {
         console.log('say bye to ' + this.name)
     }
 }
+
 console.log(ref, typeof ref)
 
 //accessing value members of an object
