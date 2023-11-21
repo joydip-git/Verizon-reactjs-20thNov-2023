@@ -1,0 +1,97 @@
+1. introduction web app: HTML
+2. Introduction JS
+	- role of JS
+	- JS execution environments - browser and node js
+	- JS engine
+	- data types: string, number, boolean, object, function
+	- keywords: undefined, null, infinity, NaN etc.
+	- opeartors
+	- control flow statements
+	- JS execution cycle: preparation stage and execution stage
+		- hoisting
+		- execution context obejct (variableobject, this and scope)
+	- array (push, splice, slice, shift, unshift)
+	- new features in JS
+		- let and const keyword
+		- class, constructor, extends, super etc.
+		- spread and rest operator
+		- object destructuring
+		- JS modules (importing and exporting members of a module)
+		- templated string (string interpolation)
+
+3. Introduction in TypeScript
+		- additional data types: any, unknown, Partial etc.
+		- advantages of TS
+
+NPM:
+Node Package Manager
+tool to donwload and install node and non-node js packages (opens source 3rd party s/w)
+global installation:
+path: C:\Users\<user-name>\AppData\Roaming\npm
+command: >npm install <package-name> --location=global
+
+application specific installation (local)
+command: >npm i <package-name>
+
+installing any package using NPM tool:
+a. complete dependency
+>npm i <package-name> or (older version) npm i <package-name> --save
+
+b. dev dependency
+>npm i <package-name> -D or (older version) npm i <package-name> --save-dev
+
+JSON: JavaScript Object Notation
+
+const obj={
+	name:'anil',
+	id:1,
+	salary:1000
+}
+
+
+{ "name":"anil", "id":1, "salary":1000 }
+
+var x = 10
+{"x":10}
+
+configuration file for application:
+package.json => contain the list of other packages, that your application is dependent on, apart other configurations, like your application (pakage) name, version, author, git repo information etc.
+placement: at the root of the application directory
+
+create package.json:
+a. manually
+b. using NPM tool
+	>npm init 
+	>npm init --yes
+
+TypeScript:
+	a. Superset of JS: it provides you with extra fetaures (even some of them are not supported by ECMAScript guideline)
+	b. static type checking
+	c. strict data typing
+	d. type inference: evaluating the data type of variable from the assigned value
+
+Note: TS is development mode language.It can neither be executed in Node JS or browser, as none of them contains TS engine. Hence, the TS code has to be converted to JS. This conversion is known transpilation (transformation + compilation).
+It can be done by using a transpiler tool: typescript (tsc)
+
+installation:
+global installation:
+>npm i typescript --local=global
+
+local installation:
+>npm i typescript -D
+
+typescript compiler configuration:
+file: tsconfig.json
+placement: root of the application directory
+
+create tsconfig.json:
+a. manually
+b. using TSC tool
+	>tsc --init 
+
+
+
+	
+
+
+	

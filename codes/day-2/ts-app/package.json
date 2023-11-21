@@ -1,0 +1,13 @@
+{
+  "name": "ts-app",
+  "version": "1.0.0",
+  "description": "simple typescript application",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.2"
+  }
+}
