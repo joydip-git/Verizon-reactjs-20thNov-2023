@@ -1,21 +1,23 @@
 import { Employee } from "../models/employee";
+import { employees } from "../repository/employees";
 import { ManagerContract } from "./manager-contract";
 
 export class EmployeeManager implements ManagerContract<Employee>{
     add(item: Employee): boolean {
-        throw new Error("Method not implemented.");
+        employees.push(item)
+        return true
     }
     update(id: number, item: Employee): boolean {
-        throw new Error("Method not implemented.");
+        return false
     }
     delete(id: number): boolean {
-        throw new Error("Method not implemented.");
+        return false
     }
     get(id: number): Employee | undefined {
-        throw new Error("Method not implemented.");
+        return undefined
     }
     getAll(): Employee[] {
-        throw new Error("Method not implemented.");
+        const copy = [...employees]
+        return copy
     }
-
 }
