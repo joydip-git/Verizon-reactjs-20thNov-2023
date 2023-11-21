@@ -5,7 +5,7 @@ export class Hr extends Employee {
         super(id, name, basicPayment, daPayment, hraPayment)
     }
     calculateSalary(): void {
-        this.calculateSalary()
+        super.calculateSalary()
         this.totalSalary += this.gratuityPayment
     }
 }
