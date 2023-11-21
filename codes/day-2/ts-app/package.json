@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "simple typescript application",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "compile": "tsc --watch",
+    "app": "node ./dist/index.js"
+  },
   "keywords": [],
   "author": "joydip",
   "license": "ISC",
   "devDependencies": {
+    "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
   }
 }
