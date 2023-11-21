@@ -18,10 +18,10 @@
 		- object destructuring
 		- JS modules (importing and exporting members of a module)
 		- templated string (string interpolation)
+		- arrow function
+		- Promise API (for asynchronity)
 
 3. Introduction in TypeScript
-		- additional data types: any, unknown, Partial etc.
-		- advantages of TS
 
 NPM:
 Node Package Manager
@@ -69,11 +69,14 @@ TypeScript:
 	b. static type checking
 	c. strict data typing
 	d. type inference: evaluating the data type of variable from the assigned value
+	e. additional data types: any, unknown, Partial etc.
 
 Features:
 	short-hand syntax for class creation
 	interface
 	generic support
+	additional data types
+	
 
 Note: TS is development mode language.It can neither be executed in Node JS or browser, as none of them contains TS engine. Hence, the TS code has to be converted to JS. This conversion is known transpilation (transformation + compilation).
 It can be done by using a transpiler tool: typescript (tsc)
@@ -94,13 +97,16 @@ a. manually
 b. using TSC tool
 	>tsc --init 
 
-interface BlogPost{
-	postId:number;
-	postTitle:string;
-	postBody:string;
-}
+asynchronous operations in ES (JS/TS/...)
 
-const posts:BlogPost[]=[]
+task: get the delivery
+
+success: if delivered just keep it with you
+failure: if not delivdered, leave a message 'not delivered'
+
+
+
+
 
 
 

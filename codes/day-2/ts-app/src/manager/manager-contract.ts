@@ -1,5 +1,3 @@
-//import { Employee } from "../models/employee";
-
 export interface ManagerContract<T> {
     // add(emp: Employee): boolean;
     // update(id: number, emp: Employee): boolean;
@@ -13,18 +11,3 @@ export interface ManagerContract<T> {
     get(id: number): T | undefined;
     getAll(): T[];
 }
-
-/*
-interface BlogPost {
-    postId: number;
-    postTitle: string;
-    postBody: string;
-}
-const posts: BlogPost[] = [
-    {
-        postId: 1,
-        postTitle: 'title',
-        postBody: 'body'
-    }
-]
-*/
