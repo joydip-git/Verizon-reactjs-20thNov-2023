@@ -1,6 +1,7 @@
 // import * as Types from "./person";
 // import { Person as PersonInfo } from "./person";
 
+/*
 import { Developer } from "./models/developer";
 import { Hr } from "./models/hr";
 import { EmployeeManager } from "./manager/employeemanager";
@@ -18,3 +19,13 @@ const allRecords = managerRef.getAll()
 for (const employee of allRecords) {
     console.log(`${employee.name} has got salary: ${employee.totalSalary}`)
 }
+*/
+
+import { App } from "./components/app/App";
+import { createRoot } from "react-dom/client";
+
+const appDesign = App()
+const containerElement = document.getElementById('main') as HTMLElement
+
+createRoot(containerElement)
+    .render(appDesign)

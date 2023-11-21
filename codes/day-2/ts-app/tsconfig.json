@@ -4,6 +4,9 @@
     "outDir": "dist",
     "target": "ES5",
     "forceConsistentCasingInFileNames": true,
-    "strict": true
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "reactNamespace": "React",
   }
 }
