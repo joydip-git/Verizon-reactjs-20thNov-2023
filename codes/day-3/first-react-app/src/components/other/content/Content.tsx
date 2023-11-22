@@ -1,7 +1,8 @@
-const Content = () => {
-    const body = 'React JS is a JS library, which helps you to create SPA'
-
-    const design = <p>{body}</p>
+type ContentPropType = {
+    contentBody: string
+}
+const Content = (props: Readonly<ContentPropType>) => {
+    const design = <p>{props.contentBody}</p>
     return design
 }
 export default Content
