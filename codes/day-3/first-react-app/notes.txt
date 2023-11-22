@@ -1,0 +1,72 @@
+//index.tsx
+
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+const containerElement = document.getElementById('root') as HTMLElement
+const root = createRoot(containerElement);
+
+//const appDesign = App()
+//root.render(appDesign);
+root.render(<App />)
+
+//causing a delay
+// setTimeout(
+//     () => {
+//         const containerElement = document.getElementById('root') as HTMLElement
+//         const appDesign = App()
+//         const root = createRoot(containerElement);
+//         root.render(appDesign);
+//     },
+//     5000
+// )
+
+//App.tsx
+import { createElement } from "react";
+
+//React Design without JSX/TSX
+
+/*
+function App() {
+
+  //data
+  const title = 'Welcome to React JS'
+  const body = 'React JS is a JavaScript library and it helps you create SPA'
+  //design
+  //<div> <-- root element
+  //<h1>Welcome to React JS<h1>
+  //<br>
+  //<p>React JS is a JavaScript library and it helps you create SPA</p>
+  //</div>
+  const titleElement = createElement('h1', null, title)
+  const breakElement = createElement('br')
+  const bodyElement = createElement('p', null, body)
+
+  const divElement = createElement('div', null, [titleElement, breakElement, bodyElement])
+  return divElement
+}
+*/
+//React Design with JSX/TSX
+
+function App(): JSX.Element | JSX.Element[] {
+
+  //data
+  const title = 'Welcome to React JS'
+  const body = 'React JS is a JavaScript library and it helps you create SPA'
+
+  const divElement = (
+    <div>
+      <h1>
+        {title}
+      </h1>
+      <br />
+      <p>
+        {body}
+      </p>
+    </div>
+  )
+  return divElement
+}
+
+export default App
