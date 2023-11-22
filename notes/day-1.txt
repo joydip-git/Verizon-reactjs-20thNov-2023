@@ -1,3 +1,5 @@
+Day-1 discussion:
+
 web applications
 	HTML and CSS
 	JavaScript

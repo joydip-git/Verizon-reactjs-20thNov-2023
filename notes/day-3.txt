@@ -1,0 +1,58 @@
+Topics covered on day-2:
+1. TypeScript
+	- advantages of TS
+	- dev mode language
+	- static type checking
+	- strict data typing
+	- type inference
+	- extra features
+		i.  	class and its members
+		ii. 	interface
+		iii. 	generic type
+		iv.		extra data types - any, unknown etc.
+		v. 		create custm data type using 'type' keyword [type myType=boolean|undefined|null]
+		vi.		typification of function [type fnType<T> = (arg:T)=>void]
+		etc.
+
+2. New features of ECMAScript (guideline proposed by ECMA)
+	- arrow function [const add = (a:number, b:number)=>a+b]
+	- Promise/Promise<T>
+
+3. tools:
+		transpiler (tsc)
+		npm
+4. package.json
+5. tsconfig.json
+6. npm tool and package installation (global and local)
+7. Introduction to React
+
+Day-3 discussion:
+
+React JS: Client-side UI development Single Page Application (SPA) based JavaScript library
+react and react-dom
+	
+frameworks:
+Next JS, Gatsby etc.
+
+Tool to create React Application: create-react-app
+installtaion of create-react-app tool:
+>npm i create-react-app --location=global
+
+creation of TS based react application using the tool:
+>crete-react-app <app-name> --template typescript
+
+creation of JS based react application using the tool:
+>crete-react-app <app-name> --template javascript
+or 
+>crete-react-app <app-name>
+
+in case of create-react-app tool is not installed using package runner (npx):
+direct creation of React App:
+command: >npx crete-react-app <app-name> --template typescript
+		   >npx crete-react-app <app-name>
+
+
+
+
+
+

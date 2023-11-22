@@ -1,3 +1,4 @@
+Topics covered on day-1:
 1. introduction web app: HTML
 2. Introduction JS
 	- role of JS
@@ -21,10 +22,10 @@
 		- arrow function
 		- Promise API (for asynchronity)
 
-3. Introduction in TypeScript
 
-NPM:
-Node Package Manager
+Day-2 discussion:
+
+NPM: Node Package Manager
 tool to donwload and install node and non-node js packages (opens source 3rd party s/w)
 global installation:
 path: C:\Users\<user-name>\AppData\Roaming\npm
