@@ -51,6 +51,14 @@ direct creation of React App:
 command: >npx crete-react-app <app-name> --template typescript
 		   >npx crete-react-app <app-name>
 
+when the react app runs in the browser, the HTML file is separately loaded without any design. It is known as dehydrated page.
+A moment later React design is pushed into the HTML page (in body, in div with id root). this is known hydration technique.
+a time gap between these two events is because of that VDOM->ADOM translation
+the very first time the entire react app design gets loaded in the browser is known as "mounting"
+
+
+
+
 
 
 
