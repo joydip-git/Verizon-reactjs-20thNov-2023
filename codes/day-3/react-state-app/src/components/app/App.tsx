@@ -43,6 +43,7 @@ class App extends Component<AppPropType, AppStateType> {
 
   render() {
     console.log('App rendered')
+    console.log(this.props.x, this.props.y)
     return (
       <div className="App">
         <Counter value={this.state.data} increaseValue={this.incresaeHandler} />

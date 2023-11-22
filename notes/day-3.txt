@@ -63,6 +63,78 @@ a component is nothing but a function in React Js which contains data, styles, d
 JSX/TSX syntax:
 JavaScript XML or TypeScript XML
 
+Type of components:
+	- functional component (stateless)
+	- class component (stateful)
+		note: inherit from base class Component to create your class component
+				the base class, Component, offers you
+
+				i. state property to maintian state of data
+				ii. setState() method to update state asynchornously
+
+				iii. props property, thorugh which you can access the property object (that has been used to pass data/function from paremt component)
+				<App x={10}/> => {x:10}
+				this.props => {x:10}
+				this.props.x
+
+				iv. lifecycle methods: 
+					render() => called the very first time the component object is created and every time after that whenever 
+							- state of the component is updated and/or 
+							- the class component has received new property object from parent component
+
+State of a class component:
+	state is a property a component
+	it must be assigned to an object
+	all data that should be tracked, must be placed inside state object using different properties
+	this.state={
+			data:0, 
+			name:'', 
+			isOk:true, 
+			person:{ name:'', id:1, salary:0}
+	}
+	in a class component only ONE state can be present
+	state should never be mutated directly (like props), rather immutably, i.e., using setState() method
+	state is an intrinsic property of a component, which should NEVER be shared with any other component. If you want, pass data from the state of one component to another via props.
+
+setState method:
+	must pass new state object as an argument
+	alternately, you can pass a callback function, which itself must return a new state object. in this callback, the setState method passes the current state copy, which you might need in order to create new state
+
+state in functional component:
+	use useState() "hook" API to create a state for functional component
+	state nature can be anything, i.e. it is not necessary that the state has to be an object type always
+	unlike class component, where you can avail ONLY ONE state, in functional component, you can avail multiple state
+
+function useState<T>(initial:T){
+	let stateData=initial
+
+	const updateState=(newData:T)=>{
+		stateData = newData
+	}
+
+	const updateState=(callback)=>{
+		let copy = stateData
+		stateData = callback(copy)
+	}
+
+	return [stateData, updateState]
+}
+
+
+class Employee{
+	string name;
+	int id;
+	float salary:
+	static string companyName;
+}
+
+Employee venkat = new Employee('V',1,100,'Verizon')
+Employee ancy = new Employee('ancy',2,200,'Verizon')
+
+
+
+						
+
 
 
 
