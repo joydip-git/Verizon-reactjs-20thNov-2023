@@ -1,7 +1,7 @@
 const Header = () => {
-    const content = 'React JS is a JS library, which helps you to create SPA'
+    const content = 'Welcome to React JS'
 
-    const design = <p>{content}</p>
+    const design = <h1>{content}</h1>
 
     return design
 }
