@@ -56,6 +56,14 @@ A moment later React design is pushed into the HTML page (in body, in div with i
 a time gap between these two events is because of that VDOM->ADOM translation
 the very first time the entire react app design gets loaded in the browser is known as "mounting"
 
+Components:
+a component is nothing but a function in React Js which contains data, styles, design and must return a react element.
+
+
+JSX/TSX syntax:
+JavaScript XML or TypeScript XML
+
+
 
 
 
