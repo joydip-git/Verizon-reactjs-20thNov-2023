@@ -40,17 +40,7 @@ const ProductList = () => {
                         products.map(
                             (p: Product) => {
                                 return (
-                                    <tr>
-                                        <td>
-                                            <img src={p.imageUrl} alt="NA" />
-                                        </td>
-                                        <td>{p.productName}</td>
-                                        <td>{p.price}</td>
-                                        <td>{p.starRating}</td>
-                                        <td>
-                                            <button type="button">Delete</button>
-                                        </td>
-                                    </tr>
+                                    
                                 )
                             }
                         )
