@@ -2,6 +2,7 @@ import { AxiosResponse } from "axios"
 import { fetchProducts } from "../../../services/productservice"
 import { ApiResponse } from "../../../models/apiresponse"
 import { Product } from "../../../models/product"
+import ProductRow from "../product-row/ProductRow"
 
 const ProductList = () => {
     let products: Product[] | undefined;
@@ -38,11 +39,7 @@ const ProductList = () => {
                 <tbody>
                     {
                         products.map(
-                            (p: Product) => {
-                                return (
-                                    
-                                )
-                            }
+                            (p: Product) => <ProductRow product={p} />
                         )
                     }
                 </tbody>
