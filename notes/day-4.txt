@@ -18,3 +18,18 @@ http://localhost:3000/products/view/1 => ProductDetail
 http://localhost:3000/products/edit/1 => EditProduct
 http://localhost:3000/products/add => AddProduct
 
+
+Sending HTTP request from React Application:
+1. fetch() API 
+2. third party (open source) API - axios
+
+axios:
+	get()
+	post()
+	put()
+	delete()
+	....
+
+>npm i axios
+	
+
