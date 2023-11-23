@@ -17,6 +17,9 @@ export default class PostList extends Component<{}, PostListStateType> {
         }
         console.log('PL created')
     }
+    shouldComponentUpdate(nextProps: Readonly<{}>, nextState: Readonly<PostListStateType>, nextContext: any): boolean {
+        return true
+    }
     render() {
         console.log('PL rendered')
         const { errorInfo, posts, fetchComplete } = this.state

@@ -3,7 +3,7 @@ import { fetchProducts } from "../../../services/productservice"
 import { ApiResponse } from "../../../models/apiresponse"
 import { Product } from "../../../models/product"
 import ProductRow from "../product-row/ProductRow"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const ProductList = () => {
 
@@ -14,26 +14,35 @@ const ProductList = () => {
     console.log('PL rendered')
     console.log('initiate fetching data')
 
-    const p: Promise<AxiosResponse<ApiResponse<Product[]>>> = fetchProducts()
-    p.then(
-        (resp: AxiosResponse<ApiResponse<Product[]>>) => {
-            console.log('received response')
-            const apiResponse = resp.data
-            if (apiResponse.data !== null) {
-                setErrorMessage('')
-                setFetchCompleted(true)
-                setProducts(apiResponse.data)
-            } else {
-                setErrorMessage(apiResponse.message)
+    const getProductRecods = () => {
+        const p: Promise<AxiosResponse<ApiResponse<Product[]>>> = fetchProducts()
+        p.then(
+            (resp: AxiosResponse<ApiResponse<Product[]>>) => {
+                console.log('received response')
+                const apiResponse = resp.data
+                if (apiResponse.data !== null) {
+                    setErrorMessage('')
+                    setFetchCompleted(true)
+                    setProducts(apiResponse.data)
+                } else {
+                    setErrorMessage(apiResponse.message)
+                    setFetchCompleted(true)
+                    setProducts(undefined)
+                }
+            },
+            (err: Error) => {
+                setErrorMessage(err.message)
                 setFetchCompleted(true)
                 setProducts(undefined)
             }
+        )
+    }
+
+    useEffect(
+        () => {
+            getProductRecods()
         },
-        (err: Error) => {
-            setErrorMessage(err.message)
-            setFetchCompleted(true)
-            setProducts(undefined)
-        }
+        []
     )
 
     let design: any;

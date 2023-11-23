@@ -1,6 +1,6 @@
 1. HTTP requests
 2. rendering list of items in UI - map() of array and key property of react element
-3. lifecycle of components and Effect hook
+3. lifecycle of class components and Effect hook in functional component
 
 4. use redux to maintain state of data out of component
 5. routing in React
@@ -45,7 +45,34 @@ reading data from or writing data into a file
 ....................
 
 class component => state and lifecycle related methods
+
+mounting: componentDidMount
+updation: componentDidUpdate, 
+destruction/unmounting: compontWillUnmount
+
+when a component is re-rendered:
+	- when its state is updated
+	- when parent state is updated
+	- when from parent it receives new props
+
+shouldComponentUpdate(){
+	//is internal state is having updated data or not
+	//did the component receive fresh props from its parent or not
+	return true/false
+}
+render(){}
+
+
 functional component => lifecycle type of facility via "effect hook" (useEffect)
+useEffect(
+	()=>{
+		//side effect causing code		
+		return ()=>{ //clean up code }
+	},
+	[value1, value2]
+)
+
+return RE
 
 
 
