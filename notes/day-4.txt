@@ -9,10 +9,12 @@ Nested component => DashBoard
 
 Routed Component:
 http://localhost:3000/ or http://localhost:3000/home => Home
+PageNotFound
 
-http://localhost:3000/products => ProductList
+
+
+http://localhost:3000/products => ProductList [FilterProduct + list of ProductRow]
 http://localhost:3000/products/view/1 => ProductDetail
 http://localhost:3000/products/edit/1 => EditProduct
 http://localhost:3000/products/add => AddProduct
 
-PageNotFound
