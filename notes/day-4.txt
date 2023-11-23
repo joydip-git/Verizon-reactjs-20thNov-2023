@@ -74,6 +74,10 @@ useEffect(
 
 return RE
 
+Facebook => Flux (unidirectional data flow, predictable and synchonous data update)
+
+Redux => 
+
 
 
 
