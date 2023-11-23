@@ -1,7 +1,6 @@
 export const fetchProducts = () => {
 
 }
-
 export const fetchProduct = (id: number) => {
 
 }
