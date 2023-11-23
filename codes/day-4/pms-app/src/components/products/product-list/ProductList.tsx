@@ -39,7 +39,7 @@ const ProductList = () => {
                 <tbody>
                     {
                         products.map(
-                            (p: Product) => <ProductRow product={p} />
+                            (p: Product) => <ProductRow product={p} key={p.productId} />
                         )
                     }
                 </tbody>

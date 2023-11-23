@@ -37,6 +37,6 @@ axios instance => url, timeout, errormessage, interceptors
 return type of all methods: 
 Promise<AxiosResponse<any>> 
 => 
-Promise<AxiosResponse<ApiResponse>>
+Promise<AxiosResponse<ApiResponse<Product[]>>>
 	
 
