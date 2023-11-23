@@ -1,6 +1,6 @@
 RESTful API description:
 
-URL												method				data			response
+URL												HTTP method				data			response
 -------------------------------------------------------------------------------------------------
 get all products
 http://localhost:3003/products			GET					NA			{ "message":"", "data":[{},{},..]}
