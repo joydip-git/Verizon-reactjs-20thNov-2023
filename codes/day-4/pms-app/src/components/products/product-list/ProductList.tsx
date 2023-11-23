@@ -3,28 +3,48 @@ import { fetchProducts } from "../../../services/productservice"
 import { ApiResponse } from "../../../models/apiresponse"
 import { Product } from "../../../models/product"
 import ProductRow from "../product-row/ProductRow"
+import { useState } from "react"
 
 const ProductList = () => {
-    let products: Product[] | undefined;
+
+    const [fetchCompleted, setFetchCompleted] = useState<boolean>(false)
+    const [errorMessage, setErrorMessage] = useState<string>('')
+    const [products, setProducts] = useState<Product[] | undefined>(undefined)
+
+    console.log('PL rendered')
+    console.log('initiate fetching data')
 
     const p: Promise<AxiosResponse<ApiResponse<Product[]>>> = fetchProducts()
     p.then(
         (resp: AxiosResponse<ApiResponse<Product[]>>) => {
+            console.log('received response')
             const apiResponse = resp.data
             if (apiResponse.data !== null) {
-                products = apiResponse.data
+                setErrorMessage('')
+                setFetchCompleted(true)
+                setProducts(apiResponse.data)
             } else {
-                products = undefined
+                setErrorMessage(apiResponse.message)
+                setFetchCompleted(true)
+                setProducts(undefined)
             }
         },
         (err: Error) => {
-            products = undefined
+            setErrorMessage(err.message)
+            setFetchCompleted(true)
+            setProducts(undefined)
         }
     )
 
     let design: any;
 
-    if (products !== undefined) {
+    if (!fetchCompleted) {
+        design = <span>Loading data...please wait</span>
+    } else if (errorMessage !== '') {
+        design = <span>{errorMessage}</span>
+    } else if (!products) {
+        design = <span>No records</span>
+    } else {
         design = (
             <table>
                 <thead>
@@ -38,9 +58,10 @@ const ProductList = () => {
                 </thead>
                 <tbody>
                     {
-                        products.map(
-                            (p: Product) => <ProductRow product={p} key={p.productId} />
-                        )
+                        products
+                            .map(
+                                (p: Product) => <ProductRow product={p} key={p.productId} />
+                            )
                     }
                 </tbody>
             </table>

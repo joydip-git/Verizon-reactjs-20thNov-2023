@@ -1,6 +1,6 @@
 1. HTTP requests
-2. lifecycle of components
-3. rendering list of items in UI - map() of array and key property of react element
+2. rendering list of items in UI - map() of array and key property of react element
+3. lifecycle of components and Effect hook
 
 4. use redux to maintain state of data out of component
 5. routing in React
