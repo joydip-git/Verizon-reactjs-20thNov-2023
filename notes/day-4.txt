@@ -1,0 +1,18 @@
+1. HTTP requests
+2. lifecycle of components
+3. rendering list of items in UI - map() of array and key property of react element
+
+4. use redux to maintain state of data out of component
+5. routing in React
+
+Nested component => DashBoard
+
+Routed Component:
+http://localhost:3000/ or http://localhost:3000/home => Home
+
+http://localhost:3000/products => ProductList
+http://localhost:3000/products/view/1 => ProductDetail
+http://localhost:3000/products/edit/1 => EditProduct
+http://localhost:3000/products/add => AddProduct
+
+PageNotFound
