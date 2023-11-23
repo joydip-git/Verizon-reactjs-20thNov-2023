@@ -31,5 +31,12 @@ axios:
 	....
 
 >npm i axios
+
+axios instance => url, timeout, errormessage, interceptors
+
+return type of all methods: 
+Promise<AxiosResponse<any>> 
+=> 
+Promise<AxiosResponse<ApiResponse>>
 	
 
