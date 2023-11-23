@@ -5,14 +5,13 @@
 4. use redux to maintain state of data out of component
 5. routing in React
 
+application structure and components:
 Nested component => DashBoard
-
 Routed Component:
 http://localhost:3000/ or http://localhost:3000/home => Home
 PageNotFound
 
-
-
+routes:
 http://localhost:3000/products => ProductList [FilterProduct + list of ProductRow]
 http://localhost:3000/products/view/1 => ProductDetail
 http://localhost:3000/products/edit/1 => EditProduct
@@ -39,4 +38,17 @@ Promise<AxiosResponse<any>>
 => 
 Promise<AxiosResponse<ApiResponse<Product[]>>>
 	
+"side effect" causing code:
+fetching data from RESTful API server
+sending some request using web socket
+reading data from or writing data into a file
+....................
+
+class component => state and lifecycle related methods
+functional component => lifecycle type of facility via "effect hook" (useEffect)
+
+
+
+
+
 
