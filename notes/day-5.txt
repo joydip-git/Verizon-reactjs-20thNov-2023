@@ -67,6 +67,16 @@ Provider => built-in component
 middlewares: thunk and saga (can fect data by calling async methods and subsequently dispatch action against the store)
 >npm i redux-saga
 
+routing:
+	>npm i react-router-dom
+
+
+http://localhost:3000/ or http://localhost:3000/home => Home
+http://localhost:3000/products =>PL
+http://localhost:3000/products/add => AP
+http://localhost:3000/products/view/1 => PD
+http://localhost:3000/products/update/1 => UP
+
 
 
 

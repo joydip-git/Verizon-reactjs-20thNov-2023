@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { fetchInitiate } from "../../../redux/store-slices"
 import { useAppSelector } from "../../../redux/hooks"
 
+
 const ProductList = () => {
     console.log('PL rendered')
 
