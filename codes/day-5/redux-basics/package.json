@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "app": "ts-node ./index.ts"
+    "app-index": "ts-node ./index.ts",
+    "app-main": "ts-node ./main.ts"
   },
   "keywords": [],
   "author": "",
