@@ -53,10 +53,16 @@ Redux => application wide state managament of data technique
 		h. action creator: a function to create an action object
 
 installation of redux and middlewares:
->npm i redux
+>npm i redux (legacy code)
+or
 >npm i @reduxjs/toolkit
 
->npm i redux-logger -D
+>npm i redux-logger @types/redux-logger -D
+
+connect redux and react application:
+>npm i react-redux
+
+Provider => built-in component
 
 
 

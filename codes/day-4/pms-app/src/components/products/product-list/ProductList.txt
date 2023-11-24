@@ -3,46 +3,37 @@ import { fetchProducts } from "../../../services/productservice"
 import { ApiResponse } from "../../../models/apiresponse"
 import { Product } from "../../../models/product"
 import ProductRow from "../product-row/ProductRow"
-import { useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux";
-import { fetchFailure, fetchInitiate, fetchSuccess } from "../../../redux/store-slices"
+import { useEffect, useState } from "react"
 
 const ProductList = () => {
+
+    const [fetchCompleted, setFetchCompleted] = useState<boolean>(false)
+    const [errorMessage, setErrorMessage] = useState<string>('')
+    const [products, setProducts] = useState<Product[] | undefined>(undefined)
+
     console.log('PL rendered')
     console.log('initiate fetching data')
 
-    // const errorMessage = useSelector((stateMap: any) => stateMap.productsState.errorMessage)
-    // const fetchCompleted = useSelector((stateMap: any) => stateMap.productsState.fetchCompleted)
-    // const productRecords = useSelector((stateMap: any) => stateMap.productsState.productRecords)
-
-    const { errorMessage, fetchCompleted, productRecords } = useSelector((stateMap: any) => stateMap.productsState)
-
-    const dispatch = useDispatch()
-
     const getProductRecods = () => {
-        //dispatch({type:'products/fetchInitiate'})
-        const initiateAction = fetchInitiate()
-        dispatch(initiateAction)
-
         const p: Promise<AxiosResponse<ApiResponse<Product[]>>> = fetchProducts()
         p.then(
             (resp: AxiosResponse<ApiResponse<Product[]>>) => {
                 console.log('received response')
                 const apiResponse = resp.data
                 if (apiResponse.data !== null) {
-                    //disptach({type:'products/fetchSuccess',payload:apiResponse.data})
-                    const successAction = fetchSuccess(apiResponse.data)
-                    dispatch(successAction)
+                    setErrorMessage('')
+                    setFetchCompleted(true)
+                    setProducts(apiResponse.data)
                 } else {
-                    //disptach({ type: 'products/fetchFailure', payload: apiResponse.message })
-                    const failureAction = fetchFailure(apiResponse.message)
-                    dispatch(failureAction)
+                    setErrorMessage(apiResponse.message)
+                    setFetchCompleted(true)
+                    setProducts(undefined)
                 }
             },
             (err: Error) => {
-                //disptach({ type: 'products/fetchFailure', payload: err.message })
-                const failureAction = fetchFailure(err.message)
-                dispatch(failureAction)
+                setErrorMessage(err.message)
+                setFetchCompleted(true)
+                setProducts(undefined)
             }
         )
     }
@@ -60,7 +51,7 @@ const ProductList = () => {
         design = <span>Loading data...please wait</span>
     } else if (errorMessage !== '') {
         design = <span>{errorMessage}</span>
-    } else if (!productRecords) {
+    } else if (!products) {
         design = <span>No records</span>
     } else {
         design = (
@@ -76,7 +67,7 @@ const ProductList = () => {
                 </thead>
                 <tbody>
                     {
-                        productRecords
+                        products
                             .map(
                                 (p: Product) => <ProductRow product={p} key={p.productId} />
                             )
