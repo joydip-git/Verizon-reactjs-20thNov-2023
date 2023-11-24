@@ -77,6 +77,24 @@ http://localhost:3000/products/add => AP
 http://localhost:3000/products/view/1 => PD
 http://localhost:3000/products/update/1 => UP
 
+<Route path='products' element={<PL />}>
+<Route path='products' element={<PL />}>
+<Route path='products' element={<PL />}>
+
+pushState()
+
+<BrowserRouter>
+	<Routes>
+	<Route path='products' element={<PL />}>
+<Route path='products' element={<PL />}>
+<Route path='products' element={<PL />}>
+</Routes>
+</BrowserRouter>
+HashRouter
+MemoryRouter
+
+
+
 
 
 

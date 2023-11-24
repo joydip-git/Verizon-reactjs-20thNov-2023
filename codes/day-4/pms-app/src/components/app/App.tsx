@@ -1,12 +1,6 @@
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import DashBoard from '../common/dashboard/DashBoard';
-import ProductList from '../products/product-list/ProductList';
 import './App.css';
-import Home from '../common/home/Home';
-import AddProduct from '../products/add-product/AddProduct';
-import ProductDetail from '../products/product-detail/ProductDetail';
-import EditProduct from '../products/edit-product/EditProduct';
-import PageNotFound from '../common/page-not-found/PageNotFound';
 import AppRoutes from '../../routes/AppRoutes';
 
 function App() {
