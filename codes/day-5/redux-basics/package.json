@@ -15,6 +15,7 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
     "redux": "^4.2.1"
   }
 }

@@ -1,29 +1,52 @@
-import { legacy_createStore, applyMiddleware } from "redux";
+import { legacy_createStore, applyMiddleware, combineReducers } from "redux";
 import { createLogger } from "redux-logger";
 
 interface CounterStateType {
     counter: number
 }
-
-interface CounterActionType {
-    type: string;
-    payload?: number;
+interface NameStateType {
+    name: string
 }
 
-const actionTypes = {
+// interface CounterActionType {
+//     type: string;
+//     payload?: number;
+// }
+// interface NameActionType {
+//     type: string;
+//     payload: string;
+// }
+interface ReduxActionType<T> {
+    type: string;
+    payload?: T;
+}
+
+const counterActionTypes = {
     INCREASE: 'INCREASE',
     DECREASE: 'DECREASE'
 }
+const nameActionTypes = {
+    'UPDATE': 'UPDATE'
+}
 
-const increaseActionCreator = (data?: number): CounterActionType => {
+// const increaseActionCreator = (data?: number): CounterActionType => {
+const increaseActionCreator = (data?: number): ReduxActionType<number> => {
     return {
-        type: actionTypes.INCREASE,
+        type: counterActionTypes.INCREASE,
         payload: data
     }
 }
-const decreaseActionCreator = (data?: number): CounterActionType => {
+// const decreaseActionCreator = (data?: number): CounterActionType => {
+const decreaseActionCreator = (data?: number): ReduxActionType<number> => {
     return {
-        type: actionTypes.DECREASE,
+        type: counterActionTypes.DECREASE,
+        payload: data
+    }
+}
+// const updateNameActionCreator = (data: string): NameActionType => {
+const updateNameActionCreator = (data?: string): ReduxActionType<string> => {
+    return {
+        type: nameActionTypes.UPDATE,
         payload: data
     }
 }
@@ -31,16 +54,20 @@ const decreaseActionCreator = (data?: number): CounterActionType => {
 const initialCounterState: CounterStateType = {
     counter: 0
 }
+const initialNameState: NameStateType = {
+    name: ''
+}
 
-const counterReducer = (state: CounterStateType = initialCounterState, action: CounterActionType): CounterStateType => {
+// const counterReducer = (state: CounterStateType = initialCounterState, action: CounterActionType): CounterStateType => {
+const counterReducer = (state: CounterStateType = initialCounterState, action: ReduxActionType<number>): CounterStateType => {
     switch (action.type) {
-        case actionTypes.INCREASE:
+        case counterActionTypes.INCREASE:
             return {
                 ...state,
                 counter: state.counter + (action.payload ? action.payload : 1)
             }
 
-        case actionTypes.DECREASE:
+        case counterActionTypes.DECREASE:
             return {
                 ...state,
                 counter: state.counter - (action.payload ? action.payload : 1)
@@ -51,11 +78,33 @@ const counterReducer = (state: CounterStateType = initialCounterState, action: C
     }
 }
 
+// const nameReducer = (state: NameStateType = initialNameState, action: NameActionType): NameStateType => {
+const nameReducer = (state: NameStateType = initialNameState, action: ReduxActionType<string>): NameStateType => {
+    switch (action.type) {
+        case nameActionTypes.UPDATE:
+            return {
+                ...state,
+                name: action.payload ? action.payload : 'NA'
+            }
+
+        default:
+            return { ...state }
+    }
+}
+
 const loggerMiddleware = createLogger()
 const storeEnhancer = applyMiddleware(loggerMiddleware)
 
+const reducerMap = combineReducers({
+    nameState: nameReducer,
+    counterState: counterReducer
+})
+// const store = legacy_createStore(
+//     counterReducer,
+//     storeEnhancer
+// )
 const store = legacy_createStore(
-    counterReducer,
+    reducerMap,
     storeEnhancer
 )
 
@@ -75,3 +124,5 @@ store.dispatch(increaseActionCreator(5))
 
 store.dispatch(decreaseActionCreator(2))
 //console.log(store.getState())
+
+store.dispatch(updateNameActionCreator('joydip'))

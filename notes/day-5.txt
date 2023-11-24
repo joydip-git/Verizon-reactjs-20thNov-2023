@@ -52,6 +52,12 @@ Redux => application wide state managament of data technique
 		g. action types: types of action
 		h. action creator: a function to create an action object
 
+installation of redux and middlewares:
+>npm i redux
+>npm i @reduxjs/toolkit
+
+>npm i redux-logger -D
+
 
 
 
