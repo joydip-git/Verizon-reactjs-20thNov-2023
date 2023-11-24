@@ -1,0 +1,62 @@
+day-3 and day-4:
+Components
+	functional components
+	class components
+
+State in a component:
+	class component: state property (this.state)
+	functional component: useState() [state hook]
+
+props:
+	class components: props property (this.props) is passed as an argument to the constructor of the class (behind the scene)
+	class A extends Component{
+		constructor(props:Readonly<{}>){
+			super(props)
+		}
+	}
+	functional components: props object is passed as anrgument to the function
+	function A(props:Readonly<{}>){}
+
+Http Requests from React: fetch or axios apis
+list of elements: map function of the array
+key property of any react element
+
+lifecycle:
+	class components: componentDidMount(), componentDidUpdate(), shouldComponentUpdate(), render(), componentWillUnmount(), ....
+	functional components: useEffect() [effect hook]
+
+	useEffect(
+		()=>{
+			return ()=>{}
+		},
+		[dependencies]
+	)
+
+hooks: APIs provided by React for functional components or to be used from custom hooks
+
+stop unnecessary rendering of components:
+	class components: 
+		a. PureComponent (implements shouldcomponentUpdate itself)
+		b. inherit from Component class and override shouldComponentUpdate()
+	functional components:
+		pass the function to memo() HOC (Higher Order Component)
+
+Redux => application wide state managament of data technique
+	termonologies:
+		a. store: collection of states and reducers
+		b. state: the data
+		c. reducer: function with logic to update state. must return new state object back to store. accepts two arguments: current state, action object
+		d. reducer map: an object (map) of reducers (in turn map of states)
+		e. action: an object which should be sent to redux store with at least one property: type (indicates which type of action to perform) and optioanlly another property (of your choice) carrying any data. it is sent via dispatch() method to redux store
+		f. dispatch: a method, provodied by redux store itself, to dispatch an action to redux store
+		g. action types: types of action
+		h. action creator: a function to create an action object
+
+
+
+
+
+
+
+
+
