@@ -9,4 +9,10 @@ const appStore = configureStore({
     },
     middleware: [loggerMiddleware]
 })
+
+//inferring data type of reducer map (state map) from return type of getState method of the store object
+
+export type AppState = ReturnType<typeof appStore.getState>
+export type AppDispatch = typeof appStore.dispatch
+
 export default appStore

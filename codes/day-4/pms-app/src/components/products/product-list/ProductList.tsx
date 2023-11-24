@@ -6,6 +6,8 @@ import ProductRow from "../product-row/ProductRow"
 import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux";
 import { fetchFailure, fetchInitiate, fetchSuccess } from "../../../redux/store-slices"
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks"
+//import { AppState } from "../../../redux/store"
 
 const ProductList = () => {
     console.log('PL rendered')
@@ -15,9 +17,12 @@ const ProductList = () => {
     // const fetchCompleted = useSelector((stateMap: any) => stateMap.productsState.fetchCompleted)
     // const productRecords = useSelector((stateMap: any) => stateMap.productsState.productRecords)
 
-    const { errorMessage, fetchCompleted, productRecords } = useSelector((stateMap: any) => stateMap.productsState)
+    // const { errorMessage, fetchCompleted, productRecords } = useSelector((stateMap:AppState) => stateMap.productsState)
+
+    const { errorMessage, fetchCompleted, productRecords } = useAppSelector((stateMap) => stateMap.productsState)
 
     const dispatch = useDispatch()
+    //const dispatch = useAppDispatch()
 
     const getProductRecods = () => {
         //dispatch({type:'products/fetchInitiate'})
