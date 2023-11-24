@@ -64,6 +64,9 @@ connect redux and react application:
 
 Provider => built-in component
 
+middlewares: thunk and saga (can fect data by calling async methods and subsequently dispatch action against the store)
+>npm i redux-saga
+
 
 
 
